@@ -1721,16 +1721,3 @@ window.addEventListener('resize', throttle(() => { spawnParticles(0); }, 300));
 
 
 
-
-// ── Smooth scroll fix for all anchor links including Hire Me ──
-document.addEventListener('click', function(e) {
-    const link = e.target.closest('a[href^="#"]');
-    if (!link) return;
-    const href = link.getAttribute('href');
-    if (!href || href === '#') return;
-    const target = document.querySelector(href);
-    if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-});
